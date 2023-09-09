@@ -1,0 +1,202 @@
+#img-taller {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#img-container {
+    position: relative;
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#img-container::after {
+    content: '';
+    background: rgba(20,0,36,0.5);
+    background: linear-gradient(0deg, rgba(42,2,74,0.8481308411214954) 0%, rgba(201,36,209,0.7009345794392523) 40%, rgba(199,0,255,0.0771028037383178) 100%);    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#total-cont {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    color: white;
+}
+
+#total {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bolder;
+    font-size: 6rem;
+    margin: 0;
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #611543, 1px 13px 5px rgb(89 6 107 / 59%);
+    color: #FFFFFF;
+}
+
+#total-cont p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fffc00;
+}
+
+span#fashion-icon {
+    display: inline-block;
+    margin-right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #d61baa;
+    border-radius: 50%;
+}
+
+span#fashion-icon > img {
+    width: 70%;
+    height: 70%;
+}
+
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1.5;
+    font-size: 2.5rem;
+}
+
+a.navbar-brand {
+    color: #6f6f6f!important;
+    font-weight: 600;
+}
+
+a.navbar-brand span {
+    font-family: 'Playball', cursive;
+    color: #ff00c3;
+    font-size: 2.5rem;
+    margin-right: .2rem
+}
+
+#btn-cotizar {
+    background: #ca56af;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.3rem;
+    padding: .5rem 3rem;
+}
+#btn-cotizar:hover {
+    background: #d61baa;
+}
+
+.cont-header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#about-header {
+    width: 100%;
+    height: 70vh;
+    background-image: url('/static/studio.jpg');
+    position: relative;
+}
+#about-header::after {
+    content: '';
+    background: rgba(20,0,36,0.5);
+    background: linear-gradient(0deg, rgba(42,2,74,0.8481308411214954) 0%, rgba(201,36,209,0.7009345794392523) 25%, rgba(201,36,209,0.7009345794392523) 75%, rgba(42,2,74,0.8481308411214954) 100%);    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.description {
+    align-self: center;
+}
+
+/*CONTACTO*/
+.contenedor-contacto h2 {
+    margin-bottom: 3.5rem;
+}
+.contenedor-contacto > h2 > span {
+    font-family: 'Playball', cursive;
+    color: #ff00c3;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.contacto {
+    display: flex;
+    justify-content: space-between;
+}
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    font-size: 1.25rem;
+}
+.info-contacto i {
+    color: #ff00c3;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+.contact-el {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: left;
+}
+
+
+/*MAPA*/
+#mapa {
+    background-color: #9d9d9d;
+    height: 25rem;
+    width: 30rem;
+    z-index: 1;
+    margin-left: 3rem;
+}
+
+
+/* TODO: Mobile design */
+
+@media only screen and (max-width: 770px) {
+    .row.cotizacion {
+        flex-direction: column;
+    }
+    #img-container {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+    .contacto {
+        flex-direction: column;
+    }
+    #mapa {
+        margin: 3rem auto 0 auto;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #total-cont {
+        top: 5%;
+    }
+    #total-cont p {
+        margin: 0;
+    }
+    #total {
+        font-size: 4.5rem
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    span#fashion-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}

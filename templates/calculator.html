@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+  <main class="container-fluid py-5 text-center">
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            Error: {{ error }}
+        </div>
+    {% endif %}
+
+    <div class="row cotizacion">
+        <div class="col">
+            <h1><span id="fashion-icon"><img src="/static/fashion-icon.png"></span>Cotizador de Confección</h1>
+
+            <form action="/calculator" method="post">
+
+                <div class="mb-3">
+                    <label>Tipo de Prenda</label>
+                    <select name="prenda" class="form-select" required>
+                        <option disabled selected value="">-- Selecciona --</option>
+                        {% for prenda in prendas: %}
+                            <option value="{{ prenda['prenda'] }}">{{ prenda['prenda'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Tela</label>
+                    <select name="tela" class="form-select" required>
+                        <option disabled selected value="">-- Selecciona --</option>
+                        {% for tela in telas: %}
+                            <option value="{{ tela['tela'] }}">{{ tela['tela'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Género/edad</label>
+                    <select name="genero" class="form-select" required>
+                        <option disabled selected value="">-- Selecciona --</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="niño">Niño/niña</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Cantidad</label>
+                    <input required name="cantidad" min="1" type="number" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="talla-grande" value="talla-grande">
+                        <label class="form-check-label" for="talla-grande">¿Talla grande? (L, XL, XXL)</label>
+                    </div>
+                    </div>
+                </div>
+
+                    <label>Detalles / Acabados</label>
+                    <!-- https://select2.org/appearance PUEDO USAR MULTIPLE SELECT2 TAMBIEN -->
+                    <div class="mb-3">
+                        <select multiple="multiple" name="acabados[]" class="form-select" required>
+                            <option value="">Ninguno</option>
+                            {% for acabado in acabados: %}
+                                <option value="{{ acabado['acabado'] }}">{{ acabado['acabado'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                <button type="submit" class="btn btn-primary" id="btn-cotizar">Cotizar</button>
+
+            </form>
+        </div>
+
+        <div class="col" id="img-container">
+            <img src="/static/studio.jpg" id="img-taller">
+            <div id="total-cont">
+                {% if total %}
+                    <h2 id="total">{{ total }}</h2>
+                {% endif %}
+                {% if not total %}
+                    <h2 id="total">$0.00</h2>
+                {% endif %}
+
+                <p>PRECIO ESTIMADO</p>
+                <a href="/contact"><button class="btn btn-primary mt-2">Contactar</button></a>
+            </div>
+        </div>
+
+    </div>
+  </main>
+
+
+{% endblock %}

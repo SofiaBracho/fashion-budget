@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <div id="about-header">
+        <div class="container cont-header">
+            <div class="caption">
+            <h1>Diseño de moda a tu medida.</h1>
+            <p>En Bella Exclusiva complacemos tus sueños, confeccionamos el traje que deseas lucir..</p>
+            <p><a class="btn btn-lg btn-primary" href="/calculator">Cotizar confección</a></p>
+            </div>
+        </div>
+    </div>
+
+    <main class="container-fluid py-5 text-center">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2 description">
+            <h2 class="featurette-heading">Luce el atuendo que siempre soñaste.</h2>
+            <p class="lead">¿Te imaginas lucir el atuendo de tus sueños a tu medida?. En Bella Exclusiva nos dedicamos a crear vestidos únicos y personalizados para cada ocasión.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/static/designer.jpg">
+            </div>
+        </div>
+
+        <hr class="featurette-divider mt-3">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+            <div class="card h-100">
+                <img src="/static/custom.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Diseños personalizados</h5>
+                <p class="card-text">Nos encanta escuchar tus ideas y plasmarlas en una prenda que refleje tu personalidad.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card h-100">
+                <img src="/static/measure.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Todo a tu medida</h5>
+                <p class="card-text">Hacemos que cada prenda esté adaptada a tu figura y te ayude a destacar tus rasgos sin preocuparte por conseguir la talla perfecta.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card h-100">
+                <img src="/static/attention.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">La mejor atención</h5>
+                <p class="card-text">Te brindaremos la atención que mereces, ¡nos encanta complacer a nuestros clientes!</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
